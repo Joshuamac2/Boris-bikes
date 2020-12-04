@@ -8,23 +8,26 @@ Makers Academy first week project is a task to design a system to replicate Lond
 
 
 
-```
+
 # User stories
-```
+
 ```
 As a user,
 So i can ride a bike,
 I want to be able to release from docking station
 ```
-
 ```
 As a user,
 So that I can use a working bike,
 I'd like to see if my bike is working
 ```
-
 ```
-As a user
-So I can my bike
-I want to be able to dock my bike
+As a member of the public
+So I can return bikes I've hired
+I want to dock my bike at the docking station
+```
+```
+As a member of the public
+So I can decide whether to use the docking station
+I want to see a bike that has been docked
 ```
