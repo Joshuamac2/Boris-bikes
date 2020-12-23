@@ -22,6 +22,16 @@ class DockingStation
     bikes << bike
   end
 
+  def remove_bikes
+    bikes.map do |bike|
+      if bike.working? == false
+        bikes.delete(bike)
+      else
+        bike
+      end
+    end
+  end
+
   private
 
   def full?

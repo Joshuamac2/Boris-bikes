@@ -2,8 +2,6 @@ require 'docking_station.rb'
 
 describe DockingStation do
 
-  let (:bike) {double :bike}
-
   describe '#release_bike' do
     it { is_expected.to respond_to :release_bike}
 
@@ -24,7 +22,6 @@ describe DockingStation do
     end
   end
 
-
   describe '#dock' do
     it { is_expected.to respond_to(:dock).with(1).argument }
 
@@ -39,15 +36,12 @@ describe DockingStation do
     end
   end
 
-
-  describe 'initialization' do
-    subject { DockingStation.new }
-    let(:bike) { Bike.new }
-    it 'defaults capacity' do
-      described_class::DEFAULT_CAPACITY.times do
-        subject.dock(bike)
-      end
-      expect{ subject.dock(bike) }.to raise_error 'Docking station full'
+  describe '#remove_bikes' do
+    it 'removes broken bikes' do
+      bike = double(:bike, working?: false)
+      subject.dock(bike)
+      subject.remove_bikes
+      expect(subject.bikes).to be_empty
     end
   end
 end
